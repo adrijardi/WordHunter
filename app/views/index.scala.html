@@ -1,0 +1,27 @@
+@()
+
+@main("Word Hunter Web") {
+
+    <div ng-controller="FormCtrl">
+        <div class="row" ng-class="{initialbox: !query}">
+            <section class="small-12 large-8 large-centered columns">
+                <h1 class="subheader">Use the regular expressions to search the words:</h1>
+
+                <form action="#" method="post">
+                    <label>Regex:
+                        <input type="text" name="query" placeholder="??a???" ng-model="query"/>
+                    </label>
+                </form>
+            </section>
+        </div>
+
+        <div class="row results" ng-show="query">
+            <section class="small-12 large-8 large-centered columns">
+                <h2 class="subheader">Results:</h2>
+                <div ng-repeat="result in words">
+                    {{result}}
+                </div>
+            </section>
+        </div>
+    </div>
+}
